@@ -29,7 +29,7 @@ const partnerTypes = [
   {
     label: "Funding",
     title: "Funding Partners",
-    image: solarHome.url,
+    image: solarHome,
     body: "Deploy capital toward measurable impact in rural health, gender, and climate.",
   },
   {

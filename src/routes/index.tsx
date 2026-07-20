@@ -74,8 +74,8 @@ const offerings: Offering[] = [
     id: "solar",
     eyebrow: "Solar Home Systems",
     title: "Solar Home Systems",
-    image: solarHome.url,
-    imageBig: solarHome.url,
+    image: solarHome,
+    imageBig: solarHome,
     card:
       "Solar systems sized for rural households: reliable lighting after dark, phone charging, and enough power for fans and small appliances. Every system is installed by our team, and we stay in contact after setup to handle maintenance and upgrades.",
     subject: "Solar home system enquiry",
@@ -417,7 +417,7 @@ function HomePage() {
           <FadeUp>
             <div className="aspect-[3/4] w-full overflow-hidden bg-[color:var(--ebron-cream)]">
               <img
-                src={amakaPortrait.url}
+                src={amakaPortrait}
                 alt="Amaka in her kitchen"
                 loading="lazy"
                 className="h-full w-full object-cover"
