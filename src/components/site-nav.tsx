@@ -30,10 +30,10 @@ export function SiteNav() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-colors duration-300 ${
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[color:var(--ebron-cream)]/85 backdrop-blur-md border-b border-[color:var(--ebron-muted)]/15"
-            : "bg-transparent"
+            ? "bg-[color:var(--ebron-cream)]/90 backdrop-blur-md border-b border-[color:var(--ebron-muted)]/15"
+            : "bg-[color:var(--ebron-cream)]/70 backdrop-blur-md border-b border-[color:var(--ebron-muted)]/10"
         }`}
       >
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10 flex items-center justify-between h-20">
