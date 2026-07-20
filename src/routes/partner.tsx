@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 import { FadeUp } from "@/lib/fade-up";
 import solarWater from "@/assets/solar-water.png.asset.json";
 import cookstoveImg from "@/assets/ecozoom-stove.png.asset.json";
-import solarHome from "@/assets/solar-home.jpg.asset.json";
+import solarHome from "@/assets/solar-home.jpg";
 
 export const Route = createFileRoute("/partner")({
   component: PartnerPage,
