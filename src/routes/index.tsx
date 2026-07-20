@@ -217,19 +217,29 @@ function HomePage() {
         <img
           src={heroImg.url}
           alt="A woman carrying firewood home at golden hour in rural Nigeria"
-          className="absolute inset-0 h-full w-full object-cover kenburns"
+          className="absolute inset-0 h-full w-full object-cover kenburns blur-[2px]"
           fetchPriority="high"
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top right, rgba(31,76,44,0.65), rgba(31,76,44,0.2) 55%, transparent 90%)",
+              "radial-gradient(ellipse 90% 80% at 20% 30%, rgba(31,76,44,0.78) 0%, rgba(31,76,44,0.55) 45%, rgba(31,76,44,0.35) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(31,76,44,0.35) 0%, transparent 22%)",
           }}
         />
         <div className="relative z-10 mx-auto max-w-[1280px] w-full px-6 lg:px-10 pb-20 md:pb-28">
           <div className="max-w-3xl">
-            <p className="eyebrow" style={{ color: "var(--ebron-yellow)" }}>
+            <p
+              className="eyebrow"
+              style={{ color: "var(--ebron-yellow)", textShadow: "0 1px 12px rgba(31,76,44,0.5)" }}
+            >
               Clean Cookstoves · Solar Home Systems · Off-Grid Power
             </p>
             <h1
@@ -239,11 +249,15 @@ function HomePage() {
                 lineHeight: 0.98,
                 letterSpacing: "-0.02em",
                 fontWeight: 400,
+                textShadow: "0 2px 24px rgba(31,76,44,0.55)",
               }}
             >
               Clean energy and clean cooking for rural Nigeria.
             </h1>
-            <p className="mt-8 max-w-2xl text-[18px] md:text-[20px] leading-relaxed text-[color:var(--ebron-cream)]/90">
+            <p
+              className="mt-8 max-w-2xl text-[18px] md:text-[20px] leading-relaxed text-[color:var(--ebron-cream)]/95"
+              style={{ textShadow: "0 1px 16px rgba(31,76,44,0.5)" }}
+            >
               We partner with rural communities across Nigeria to bring clean
               cookstoves, solar home systems, and off-grid energy through
               education, trust, and financing that meets families where they
@@ -252,13 +266,15 @@ function HomePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#our-work"
-                className="inline-flex items-center rounded-full bg-[color:var(--ebron-green)] hover:bg-[color:var(--ebron-green-dark)] text-[color:var(--ebron-cream)] px-7 py-3.5 text-[15px] font-medium transition-colors"
+                className="inline-flex items-center rounded-full bg-[color:var(--ebron-green)] hover:bg-[color:var(--ebron-green-dark)] text-[color:var(--ebron-cream)] px-7 py-3.5 text-[15px] font-medium transition-colors shadow-lg"
+                style={{ textShadow: "0 1px 8px rgba(31,76,44,0.4)" }}
               >
                 See Our Work
               </a>
               <a
                 href="/partner"
                 className="inline-flex items-center rounded-full border border-[color:var(--ebron-cream)]/70 hover:border-[color:var(--ebron-cream)] text-[color:var(--ebron-cream)] px-7 py-3.5 text-[15px] font-medium transition-colors"
+                style={{ background: "rgba(31,76,44,0.25)" }}
               >
                 Partner With Us
               </a>
