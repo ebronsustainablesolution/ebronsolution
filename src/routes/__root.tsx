@@ -77,21 +77,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Ebron Sustainable Solution — Clean energy for rural Nigeria" },
+      {
+        name: "description",
+        content:
+          "Ebron partners with rural communities across Nigeria to bring clean cookstoves, solar home systems, and off-grid energy through education, trust, and flexible financing.",
+      },
+      { property: "og:title", content: "Ebron Sustainable Solution" },
+      {
+        property: "og:description",
+        content:
+          "Clean cookstoves, solar home systems, and off-grid energy for rural households in Nigeria.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Ebron Sustainable Solution" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
