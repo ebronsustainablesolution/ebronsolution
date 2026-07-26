@@ -631,11 +631,25 @@ function HomePage() {
             <div className="recognition-masonry" style={{ columnGap: 24 }}>
               {[
                 {
+                  img: rec4.url,
+                  eyebrow: "With Dr. Ngozi Okonjo-Iweala · WTO",
+                  caption:
+                    "Our founder with Dr. Ngozi Okonjo-Iweala, Director-General of the World Trade Organization, on the sidelines of an international convening.",
+                  alt: "Founder meeting Dr. Ngozi Okonjo-Iweala, WTO Director-General",
+                },
+                {
                   img: rec7.url,
                   eyebrow: "With Wole Soyinka · NYU Abu Dhabi",
                   caption:
                     "Our founder with Nobel Laureate Wole Soyinka, discussing how literature and the arts can raise environmental awareness in Nigerian universities.",
                   alt: "Founder with Wole Soyinka at NYU Abu Dhabi",
+                },
+                {
+                  img: recAward.url,
+                  eyebrow: "Commitment Award 2026 · University of Erfurt",
+                  caption:
+                    "Receiving the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt — recognizing sustained work on clean energy and community development.",
+                  alt: "Commitment Award 2026, University of Erfurt",
                 },
                 {
                   img: rec2.url,
