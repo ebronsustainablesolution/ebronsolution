@@ -192,9 +192,8 @@ const team = [
   },
   {
     name: "Aruoture Akpofure, Esq.",
-    role: "Managing Director (Volunteer)",
-    // Placeholder portrait until a real photo is available.
-    photo: aruotureImg,
+    role: "Managing Director",
+    photo: aruotureImg.url,
     bio: "Aruoture is a corporate lawyer with seven years of experience and a specialization in Nigerian renewable-energy regulation. He advises Ebron pro bono on corporate governance, compliance, and the licensing requirements that come with off-grid energy work. He is a member of the Nigerian Bar Association and the Chartered Institute of Arbitrators, and serves on the directorate of the Policy Round Table.",
   },
 ];
