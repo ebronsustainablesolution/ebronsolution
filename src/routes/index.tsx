@@ -14,7 +14,14 @@ import boyFire from "@/assets/boy-fire.png.asset.json";
 import amakaPortrait from "@/assets/amaka-portrait.jpg";
 import nnennaImg from "@/assets/nnenna.png.asset.json";
 import abimbolaImg from "@/assets/abimbola.jpg.asset.json";
-import aruotureImg from "@/assets/aruoture.jpg";
+import aruotureImg from "@/assets/aruoture-real.jpeg.asset.json";
+import rec1 from "@/assets/recognition/ebron_1.jpeg.asset.json";
+import rec2 from "@/assets/recognition/ebron_2.jpeg.asset.json";
+import rec3 from "@/assets/recognition/ebron_3.jpeg.asset.json";
+import rec5 from "@/assets/recognition/ebron_5.jpeg.asset.json";
+import rec6 from "@/assets/recognition/ebron_6.jpeg.asset.json";
+import rec7 from "@/assets/recognition/ebron_7.png.asset.json";
+import rec8 from "@/assets/recognition/ebron_8.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -185,9 +192,8 @@ const team = [
   },
   {
     name: "Aruoture Akpofure, Esq.",
-    role: "Managing Director (Volunteer)",
-    // Placeholder portrait until a real photo is available.
-    photo: aruotureImg,
+    role: "Managing Director",
+    photo: aruotureImg.url,
     bio: "Aruoture is a corporate lawyer with seven years of experience and a specialization in Nigerian renewable-energy regulation. He advises Ebron pro bono on corporate governance, compliance, and the licensing requirements that come with off-grid energy work. He is a member of the Nigerian Bar Association and the Chartered Institute of Arbitrators, and serves on the directorate of the Policy Round Table.",
   },
 ];
@@ -587,6 +593,124 @@ function HomePage() {
                 </div>
               </FadeUp>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RECOGNITION */}
+      <section id="recognition" className="bg-[color:var(--ebron-cream)]">
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-10 py-20 md:py-40">
+          <FadeUp>
+            <p className="eyebrow">Global Presence</p>
+            <h2 className="mt-4" style={{ fontSize: "clamp(32px, 4.5vw, 56px)", fontWeight: 400 }}>
+              Where the work has taken us.
+            </h2>
+            <p
+              className="mt-4 text-[18px] leading-relaxed text-[color:var(--ebron-muted)]"
+              style={{ maxWidth: 640 }}
+            >
+              Our team has represented Nigerian clean-energy work at climate
+              convenings, energy summits, and policy conversations across the
+              continent and beyond. A short record of where the work has taken
+              us so far.
+            </p>
+          </FadeUp>
+
+          <div
+            className="mt-16 md:mt-20"
+            style={{ columnGap: 24 }}
+          >
+            <style>{`
+              .recognition-masonry { column-count: 1; }
+              @media (min-width: 768px) { .recognition-masonry { column-count: 2; } }
+              @media (min-width: 1024px) { .recognition-masonry { column-count: 3; } }
+              .recognition-masonry > * { break-inside: avoid; margin-bottom: 32px; }
+            `}</style>
+            <div className="recognition-masonry" style={{ columnGap: 24 }}>
+              {[
+                {
+                  img: rec7.url,
+                  eyebrow: "With Wole Soyinka · NYU Abu Dhabi",
+                  caption:
+                    "Our founder with Nobel Laureate Wole Soyinka, discussing how literature and the arts can raise environmental awareness in Nigerian universities.",
+                  alt: "Founder with Wole Soyinka at NYU Abu Dhabi",
+                },
+                {
+                  img: rec2.url,
+                  eyebrow: "Speaking at COP28 · Nigeria Pavilion",
+                  caption:
+                    "Our founder addressing the Nigeria Pavilion at COP28 in Dubai on the theme of nurturing Nigeria's clean-energy future.",
+                  alt: "Founder speaking at Nigeria Pavilion podium, COP28",
+                },
+                {
+                  img: rec1.url,
+                  eyebrow: "COP28 Panel · Climate Change Awareness",
+                  caption:
+                    "Panel discussion at the Nigeria Pavilion, COP28, alongside young leaders including the Special Adviser on Climate Change to the Lagos State Government.",
+                  alt: "COP28 Nigeria Pavilion panel, Dubai",
+                },
+                {
+                  img: rec6.url,
+                  eyebrow: "IRENA Innovation Week · Germany · 2023",
+                  caption:
+                    "At the International Renewable Energy Agency's Innovation Week in Bonn, joining renewable-energy leaders from around the world.",
+                  alt: "IRENA Innovation Week, Germany",
+                },
+                {
+                  img: rec8.url,
+                  eyebrow: "Youth Energy Summit · Nairobi · 2023",
+                  caption:
+                    "At YES!, joining young energy leaders from across the continent working on Africa's electrification, alongside representatives from government and industry.",
+                  alt: "Youth Energy Summit (YES!), Nairobi",
+                },
+                {
+                  img: rec3.url,
+                  eyebrow: "Youth Climate Session · COP28",
+                  caption:
+                    "After a session with young climate advocates at COP28 in Dubai.",
+                  alt: "With young climate advocates at COP28",
+                },
+                {
+                  img: rec5.url,
+                  eyebrow: "Children and Youth Pavilion · COP28",
+                  caption:
+                    "At the Children and Youth Pavilion, supporting the #YouthLeadClimateAction initiative, a partnership of the UN Youth Office, Connect4Climate, and the World Bank Group.",
+                  alt: "COP28 Children and Youth Pavilion",
+                },
+              ].map((item, i) => (
+                <FadeUp key={i} delay={(i % 3) * 60}>
+                  <figure>
+                    <img
+                      src={item.img}
+                      alt={item.alt}
+                      loading="lazy"
+                      className="block w-full h-auto"
+                      style={{
+                        borderRadius: 4,
+                        filter: "saturate(0.97) contrast(1.02)",
+                      }}
+                    />
+                    <figcaption className="mt-4">
+                      <p
+                        className="text-[color:var(--ebron-green)]"
+                        style={{
+                          fontFamily: "var(--font-sans)",
+                          fontSize: 11,
+                          fontWeight: 500,
+                          letterSpacing: "0.15em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {item.eyebrow}
+                      </p>
+                      <p className="mt-2 text-[15px] text-[color:var(--ebron-charcoal)]" style={{ lineHeight: 1.55 }}>
+                        {item.caption}
+                      </p>
+                    </figcaption>
+                  </figure>
+                </FadeUp>
+              ))}
+            </div>
           </div>
         </div>
       </section>
