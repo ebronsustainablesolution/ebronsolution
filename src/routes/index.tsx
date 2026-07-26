@@ -618,17 +618,36 @@ function HomePage() {
             </p>
           </FadeUp>
 
-          <div
-            className="mt-16 md:mt-20"
-            style={{ columnGap: 24 }}
-          >
+          <div className="mt-16 md:mt-20">
             <style>{`
-              .recognition-masonry { column-count: 1; }
-              @media (min-width: 768px) { .recognition-masonry { column-count: 2; } }
-              @media (min-width: 1024px) { .recognition-masonry { column-count: 3; } }
-              .recognition-masonry > * { break-inside: avoid; margin-bottom: 32px; }
+              .recognition-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 32px;
+                grid-auto-rows: 1fr;
+              }
+              @media (min-width: 640px) {
+                .recognition-grid { grid-template-columns: repeat(2, 1fr); }
+              }
+              @media (min-width: 1024px) {
+                .recognition-grid { grid-template-columns: repeat(3, 1fr); }
+              }
+              .recognition-card { display: flex; flex-direction: column; }
+              .recognition-card__image {
+                aspect-ratio: 4 / 5;
+                width: 100%;
+                border-radius: 4px;
+                overflow: hidden;
+              }
+              .recognition-card__image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: saturate(0.97) contrast(1.02);
+              }
+              .recognition-card__caption { min-height: 96px; }
             `}</style>
-            <div className="recognition-masonry" style={{ columnGap: 24 }}>
+            <div className="recognition-grid">
               {[
                 {
                   img: rec4.url,
@@ -636,6 +655,7 @@ function HomePage() {
                   caption:
                     "Our founder with Dr. Ngozi Okonjo-Iweala, Director-General of the World Trade Organization, on the sidelines of an international convening.",
                   alt: "Founder meeting Dr. Ngozi Okonjo-Iweala, WTO Director-General",
+                  pos: "center center",
                 },
                 {
                   img: rec7.url,
@@ -643,6 +663,7 @@ function HomePage() {
                   caption:
                     "Our founder with Nobel Laureate Wole Soyinka, discussing how literature and the arts can raise environmental awareness in Nigerian universities.",
                   alt: "Founder with Wole Soyinka at NYU Abu Dhabi",
+                  pos: "center 30%",
                 },
                 {
                   img: recAward.url,
@@ -650,6 +671,7 @@ function HomePage() {
                   caption:
                     "Receiving the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt — recognizing sustained work on clean energy and community development.",
                   alt: "Commitment Award 2026, University of Erfurt",
+                  pos: "center 40%",
                 },
                 {
                   img: rec2.url,
@@ -657,6 +679,7 @@ function HomePage() {
                   caption:
                     "Our founder addressing the Nigeria Pavilion at COP28 in Dubai on the theme of nurturing Nigeria's clean-energy future.",
                   alt: "Founder speaking at Nigeria Pavilion podium, COP28",
+                  pos: "center 30%",
                 },
                 {
                   img: rec1.url,
@@ -664,6 +687,7 @@ function HomePage() {
                   caption:
                     "Panel discussion at the Nigeria Pavilion, COP28, alongside young leaders including the Special Adviser on Climate Change to the Lagos State Government.",
                   alt: "COP28 Nigeria Pavilion panel, Dubai",
+                  pos: "center 30%",
                 },
                 {
                   img: rec6.url,
@@ -671,6 +695,7 @@ function HomePage() {
                   caption:
                     "At the International Renewable Energy Agency's Innovation Week in Bonn, joining renewable-energy leaders from around the world.",
                   alt: "IRENA Innovation Week, Germany",
+                  pos: "center 30%",
                 },
                 {
                   img: rec8.url,
@@ -678,6 +703,7 @@ function HomePage() {
                   caption:
                     "At YES!, joining young energy leaders from across the continent working on Africa's electrification, alongside representatives from government and industry.",
                   alt: "Youth Energy Summit (YES!), Nairobi",
+                  pos: "center 20%",
                 },
                 {
                   img: rec3.url,
@@ -685,6 +711,7 @@ function HomePage() {
                   caption:
                     "After a session with young climate advocates at COP28 in Dubai.",
                   alt: "With young climate advocates at COP28",
+                  pos: "center 30%",
                 },
                 {
                   img: rec5.url,
@@ -692,24 +719,24 @@ function HomePage() {
                   caption:
                     "At the Children and Youth Pavilion, supporting the #YouthLeadClimateAction initiative, a partnership of the UN Youth Office, Connect4Climate, and the World Bank Group.",
                   alt: "COP28 Children and Youth Pavilion",
+                  pos: "center 45%",
                 },
               ].map((item, i) => (
                 <FadeUp key={i} delay={(i % 3) * 60}>
-                  <figure>
-                    <img
-                      src={item.img}
-                      alt={item.alt}
-                      loading="lazy"
-                      className="block w-full h-auto"
-                      style={{
-                        borderRadius: 4,
-                        filter: "saturate(0.97) contrast(1.02)",
-                      }}
-                    />
-                    <figcaption className="mt-4">
+                  <figure className="recognition-card">
+                    <div className="recognition-card__image">
+                      <img
+                        src={item.img}
+                        alt={item.alt}
+                        loading="lazy"
+                        style={{ objectPosition: item.pos }}
+                      />
+                    </div>
+                    <figcaption>
                       <p
                         className="text-[color:var(--ebron-green)]"
                         style={{
+                          marginTop: 24,
                           fontFamily: "var(--font-sans)",
                           fontSize: 11,
                           fontWeight: 500,
@@ -719,7 +746,10 @@ function HomePage() {
                       >
                         {item.eyebrow}
                       </p>
-                      <p className="mt-2 text-[15px] text-[color:var(--ebron-charcoal)]" style={{ lineHeight: 1.55 }}>
+                      <p
+                        className="recognition-card__caption text-[15px] text-[color:var(--ebron-charcoal)]"
+                        style={{ marginTop: 8, lineHeight: 1.55 }}
+                      >
                         {item.caption}
                       </p>
                     </figcaption>
@@ -728,6 +758,7 @@ function HomePage() {
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
