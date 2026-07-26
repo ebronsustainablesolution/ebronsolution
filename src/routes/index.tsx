@@ -14,7 +14,14 @@ import boyFire from "@/assets/boy-fire.png.asset.json";
 import amakaPortrait from "@/assets/amaka-portrait.jpg";
 import nnennaImg from "@/assets/nnenna.png.asset.json";
 import abimbolaImg from "@/assets/abimbola.jpg.asset.json";
-import aruotureImg from "@/assets/aruoture.jpg";
+import aruotureImg from "@/assets/aruoture-real.jpeg.asset.json";
+import rec1 from "@/assets/recognition/ebron_1.jpeg.asset.json";
+import rec2 from "@/assets/recognition/ebron_2.jpeg.asset.json";
+import rec3 from "@/assets/recognition/ebron_3.jpeg.asset.json";
+import rec5 from "@/assets/recognition/ebron_5.jpeg.asset.json";
+import rec6 from "@/assets/recognition/ebron_6.jpeg.asset.json";
+import rec7 from "@/assets/recognition/ebron_7.png.asset.json";
+import rec8 from "@/assets/recognition/ebron_8.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
