@@ -22,6 +22,8 @@ import rec5 from "@/assets/recognition/ebron_5.jpeg.asset.json";
 import rec6 from "@/assets/recognition/ebron_6.jpeg.asset.json";
 import rec7 from "@/assets/recognition/ebron_7.png.asset.json";
 import rec8 from "@/assets/recognition/ebron_8.png.asset.json";
+import rec4 from "@/assets/recognition/ebron_4.jpeg.asset.json";
+import recAward from "@/assets/recognition/commitment_award_2026.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
