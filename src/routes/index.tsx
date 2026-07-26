@@ -441,7 +441,7 @@ function HomePage() {
           <FadeUp>
             <div className="aspect-[3/4] w-full overflow-hidden bg-[color:var(--ebron-cream)]">
               <img
-                src={amakaPortrait}
+                src={amakaPortrait.url}
                 alt="Amaka in her kitchen"
                 loading="lazy"
                 className="h-full w-full object-cover"
