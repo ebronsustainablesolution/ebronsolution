@@ -11,7 +11,7 @@ import cookstoveBig from "@/assets/cookstove.jpg.asset.json";
 import solarHome from "@/assets/solar-home.jpg";
 import solarWater from "@/assets/solar-water.png.asset.json";
 import boyFire from "@/assets/boy-fire.png.asset.json";
-import amakaPortrait from "@/assets/amaka-portrait.jpg";
+import amakaPortrait from "@/assets/amaka.png.asset.json";
 import nnennaImg from "@/assets/nnenna.png.asset.json";
 import abimbolaImg from "@/assets/abimbola.jpg.asset.json";
 import aruotureImg from "@/assets/aruoture-real.jpeg.asset.json";
