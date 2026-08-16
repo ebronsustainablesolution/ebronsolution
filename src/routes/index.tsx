@@ -672,6 +672,7 @@ function HomePage() {
                     "Receiving the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt — recognizing sustained work on clean energy and community development.",
                   alt: "Commitment Award 2026, University of Erfurt",
                   pos: "center 40%",
+                  href: "/blog/commitment-award-2026",
                 },
                 {
                   img: rec2.url,
