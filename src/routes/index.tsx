@@ -722,8 +722,9 @@ function HomePage() {
                   alt: "COP28 Children and Youth Pavilion",
                   pos: "center 45%",
                 },
-              ].map((item, i) => (
-                <FadeUp key={i} delay={(i % 3) * 60}>
+              ].map((item, i) => {
+                const href = "href" in item ? (item.href as string) : undefined;
+                const card = (
                   <figure className="recognition-card">
                     <div className="recognition-card__image">
                       <img
@@ -753,10 +754,26 @@ function HomePage() {
                       >
                         {item.caption}
                       </p>
+                      {href && (
+                        <span className="mt-3 inline-block text-[14px] text-[color:var(--ebron-green-dark)] link-underline">
+                          Read more
+                        </span>
+                      )}
                     </figcaption>
                   </figure>
-                </FadeUp>
-              ))}
+                );
+                return (
+                  <FadeUp key={i} delay={(i % 3) * 60}>
+                    {href ? (
+                      <Link to={href} className="block group">
+                        {card}
+                      </Link>
+                    ) : (
+                      card
+                    )}
+                  </FadeUp>
+                );
+              })}
             </div>
           </div>
 
