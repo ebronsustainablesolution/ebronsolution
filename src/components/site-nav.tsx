@@ -38,12 +38,12 @@ export function SiteNav() {
             : "bg-[color:var(--ebron-cream)]/70 backdrop-blur-md border-b border-[color:var(--ebron-muted)]/10"
         }`}
       >
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-10 flex items-center justify-between h-20">
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-10 flex items-center justify-between h-24">
           <Link to="/" className="flex items-center" aria-label="Ebron home">
             <img
               src={logoGreen.url}
               alt="Ebron Sustainable Solution"
-              className="h-9 w-auto"
+              className="h-12 w-auto"
               style={{ filter: "none" }}
             />
           </Link>
@@ -78,11 +78,11 @@ export function SiteNav() {
 
       {open && (
         <div className="fixed inset-0 z-50 bg-[color:var(--ebron-green-dark)] text-[color:var(--ebron-cream)] flex flex-col">
-          <div className="flex items-center justify-between h-20 px-6">
+          <div className="flex items-center justify-between h-24 px-6">
             <img
               src={logoLight.url}
               alt="Ebron"
-              className="h-9 w-auto"
+              className="h-12 w-auto"
               style={{ filter: "none" }}
             />
             <button
