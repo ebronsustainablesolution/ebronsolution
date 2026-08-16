@@ -31,6 +31,7 @@ export function SiteFooter() {
                 ["Story", "/#story"],
                 ["Team", "/#team"],
                 ["Recognition", "/#recognition"],
+                ["Blog", "/blog"],
                 ["Partner With Us", "/partner"],
                 ["Contact", "/#contact"],
               ].map(([label, href]) => (
