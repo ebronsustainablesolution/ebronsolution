@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -672,6 +672,7 @@ function HomePage() {
                     "Receiving the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt — recognizing sustained work on clean energy and community development.",
                   alt: "Commitment Award 2026, University of Erfurt",
                   pos: "center 40%",
+                  href: "/blog/commitment-award-2026",
                 },
                 {
                   img: rec2.url,
@@ -721,8 +722,9 @@ function HomePage() {
                   alt: "COP28 Children and Youth Pavilion",
                   pos: "center 45%",
                 },
-              ].map((item, i) => (
-                <FadeUp key={i} delay={(i % 3) * 60}>
+              ].map((item, i) => {
+                const href = "href" in item ? (item.href as string) : undefined;
+                const card = (
                   <figure className="recognition-card">
                     <div className="recognition-card__image">
                       <img
@@ -752,10 +754,26 @@ function HomePage() {
                       >
                         {item.caption}
                       </p>
+                      {href && (
+                        <span className="mt-3 inline-block text-[14px] text-[color:var(--ebron-green-dark)] link-underline">
+                          Read more
+                        </span>
+                      )}
                     </figcaption>
                   </figure>
-                </FadeUp>
-              ))}
+                );
+                return (
+                  <FadeUp key={i} delay={(i % 3) * 60}>
+                    {href ? (
+                      <Link to={href} className="block group">
+                        {card}
+                      </Link>
+                    ) : (
+                      card
+                    )}
+                  </FadeUp>
+                );
+              })}
             </div>
           </div>
 
