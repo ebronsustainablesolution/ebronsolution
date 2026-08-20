@@ -1,5 +1,5 @@
 import { Instagram, Linkedin } from "lucide-react";
-import logoLight from "@/assets/ebron-logo-light.png.asset.json";
+import logoLight from "@/assets/ebron-logo-white-v2.png.asset.json";
 
 export function SiteFooter() {
   return (
