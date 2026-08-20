@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoGreen from "@/assets/ebron-logo-green.png.asset.json";
-import logoLight from "@/assets/ebron-logo-light.png.asset.json";
+import logoGreen from "@/assets/ebron-logo-green-v2.png.asset.json";
+import logoLight from "@/assets/ebron-logo-white-v2.png.asset.json";
 
 const links = [
   { label: "Our Work", href: "/#our-work" },
@@ -19,7 +19,7 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -32,18 +32,18 @@ export function SiteNav() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ease-out ${
           scrolled
             ? "bg-[color:var(--ebron-cream)]/90 backdrop-blur-md border-b border-[color:var(--ebron-muted)]/15"
-            : "bg-[color:var(--ebron-cream)]/70 backdrop-blur-md border-b border-[color:var(--ebron-muted)]/10"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-10 flex items-center justify-between h-24">
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-10 flex items-center justify-between h-28">
           <Link to="/" className="flex items-center" aria-label="Ebron home">
             <img
-              src={logoGreen.url}
+              src={scrolled ? logoGreen.url : logoLight.url}
               alt="Ebron Sustainable Solution"
-              className="h-12 w-auto"
+              className="h-16 md:h-20 w-auto transition-opacity duration-300 ease-out"
               style={{ filter: "none" }}
             />
           </Link>
@@ -52,7 +52,15 @@ export function SiteNav() {
               <a
                 key={l.label}
                 href={l.href}
-                className="link-underline text-[15px] text-[color:var(--ebron-charcoal)] hover:text-[color:var(--ebron-green-dark)] transition-colors"
+                className="link-underline text-[15px] transition-colors duration-300 ease-out"
+                style={{
+                  color: scrolled
+                    ? "var(--ebron-charcoal)"
+                    : "var(--ebron-cream)",
+                  textShadow: scrolled
+                    ? "none"
+                    : "0 1px 10px rgba(31,76,44,0.5)",
+                }}
               >
                 {l.label}
               </a>
@@ -68,13 +76,19 @@ export function SiteNav() {
           </div>
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden p-2 text-[color:var(--ebron-green-dark)]"
+            className="md:hidden p-2 transition-colors duration-300 ease-out"
+            style={{
+              color: scrolled
+                ? "var(--ebron-green-dark)"
+                : "var(--ebron-cream)",
+            }}
             aria-label="Open menu"
           >
             <Menu size={26} strokeWidth={1.25} />
           </button>
         </div>
       </header>
+
 
       {open && (
         <div className="fixed inset-0 z-50 bg-[color:var(--ebron-green-dark)] text-[color:var(--ebron-cream)] flex flex-col">

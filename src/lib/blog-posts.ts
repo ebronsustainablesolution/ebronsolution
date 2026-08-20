@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-26",
     dateLabel: "July 2026",
     subtitle:
-      "Our CEO received the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt, in recognition of sustained work on clean energy and community development.",
+      "Our CEO received the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt, in recognition of sustainable work on clean energy and community development.",
     image: recAward.url,
     imagePos: "center 40%",
     imageAlt: "Commitment Award 2026 ceremony at the University of Erfurt",

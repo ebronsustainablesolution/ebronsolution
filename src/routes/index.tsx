@@ -242,7 +242,10 @@ function HomePage() {
               "linear-gradient(to bottom, rgba(31,76,44,0.35) 0%, transparent 22%)",
           }}
         />
-        <div className="relative z-10 mx-auto max-w-[1280px] w-full px-6 lg:px-10 pb-20 md:pb-28">
+        <div
+          className="relative z-10 mx-auto max-w-[1280px] w-full px-6 lg:px-10 pb-20 md:pb-28"
+          style={{ paddingTop: 120 }}
+        >
           <div className="max-w-3xl">
             <p
               className="eyebrow"
@@ -669,7 +672,7 @@ function HomePage() {
                   img: recAward.url,
                   eyebrow: "Commitment Award 2026 · University of Erfurt",
                   caption:
-                    "Receiving the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt — recognizing sustained work on clean energy and community development.",
+                    "Receiving the Commitment Award 2026 at the Willy Brandt School of Public Policy, University of Erfurt — recognizing sustainable work on clean energy and community development.",
                   alt: "Commitment Award 2026, University of Erfurt",
                   pos: "center 40%",
                   href: "/blog/commitment-award-2026",
